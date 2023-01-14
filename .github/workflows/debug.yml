@@ -1,0 +1,15 @@
+name: debug
+on: push
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
+      - uses: oxidize-rb/cross-gem-action@v7
+        with:
+          platform: x86_64-linux
+          version: latest
+          ruby-versions: "3.2"
